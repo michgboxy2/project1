@@ -60,15 +60,16 @@ if(array_key_exists("submit", $_POST)){
 																	'".$email."',
 																	'".$phone."',
 																	'".$password."')") or die(mysqli_error($db));
-			$success = "SIGN UP SUCCESSFUL";
-			header('location:form1.php');
+			$success = 'SIGN UP SUCCESSFUL';
+			header('location:form1.php?success=$success');
 		}//close of empty error in 50
+		else{
 
 		foreach ($error as $err){
 			echo "<p><strong>".$err. "</strong></p>";
 			# code...
 		}
-
+}
 
 }//close of array key exist in 10
 	
