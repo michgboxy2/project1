@@ -61,11 +61,11 @@ if(array_key_exists("submit", $_POST)){
 																	'".$phone."',
 																	'".$password."')") or die(mysqli_error($db));
 			$success = 'SIGN UP SUCCESSFUL';
-			header('location:form1.php?success=$success');
+			header("location:form1.php?success=$success");
 		}//close of empty error in 50
 		else{
 
-		foreach ($error as $err){
+		foreach($error as $err){
 			echo "<p><strong>".$err. "</strong></p>";
 			# code...
 		}
@@ -78,7 +78,7 @@ if(array_key_exists("submit", $_POST)){
 
 	if(isset($_GET['success'])){
 
-		echo $_GET['success'] ;
+		echo "<p>" .$_GET['success']. "</p>" ;
 	}
 
 ?>  
@@ -90,10 +90,11 @@ if(array_key_exists("submit", $_POST)){
 <!DOCTYPE html>
 <html>
 <head>
-	<title>sign up form</title>
+	<legend><title>sign up form</title></legend>
 </head>
 <body>
 <h3>SIGN UP FORM</h3>
+<fieldset>
 <h2>PLEASE FILL THE FORM BELOW</h2>
 
 <form action="" method="post">
@@ -110,7 +111,7 @@ if(array_key_exists("submit", $_POST)){
 
 <input type="submit" name="submit" value="click to signup">
 	
-
+</fieldset>
 
 
 </form>
